@@ -405,13 +405,13 @@ where
         100
     };
     Ok(DiskUsage {
-        total,
-        used,
-        free,
+        total: total.into(),
+        used: used.into(),
+        free: free.into(),
         percent,
-        disk_inodes_free,
-        disk_inodes_total,
-        disk_inodes_used,
+        disk_inodes_free: disk_inodes_free.into(),
+        disk_inodes_total: disk_inodes_total.into(),
+        disk_inodes_used: disk_inodes_used.into(),
     })
 }
 
