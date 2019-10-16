@@ -387,9 +387,9 @@ where
             "failed to use statvfs : statvfs return an error code".to_string(),
         ));
     }
-    let total = buf.f_blocks * buf.f_frsize;
-    let avail_to_root = buf.f_bfree * buf.f_frsize;
-    let free = buf.f_bavail * buf.f_frsize;
+    let total = buf.f_blocks * buf.f_frsize as u64;
+    let avail_to_root = buf.f_bfree * buf.f_frsize as u64;
+    let free = buf.f_bavail * buf.f_frsize as u64;
     let used = total - avail_to_root;
     let total_user = used + free;
     let percent = if total_user > 0 {
